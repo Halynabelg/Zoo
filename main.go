@@ -1,9 +1,13 @@
-ppackage main
+package main
 
 import "fmt"
 
+type Animal struct {
+	name string
+	size string
+}
 type Cage struct {
-	animal         string
+	Animal
 	escaptedAnimal uint
 }
 type Zoo struct {
@@ -13,23 +17,34 @@ type Zoo struct {
 
 func putAnimal() {
 	c1 := Cage{
-		animal:         "Tiger",
+		Animal: Animal{
+			name: "Tiger",
+			size: "grand",
+		},
 		escaptedAnimal: 1,
 	}
 	c2 := Cage{
-		animal:         "Lion",
+		Animal: Animal{
+			name: "Lion",
+			size: "grand",
+		},
 		escaptedAnimal: 2,
 	}
 	c3 := Cage{
-		animal:         "Snake",
+		Animal: Animal{
+			name: "Snake",
+			size: "small",
+		},
 		escaptedAnimal: 3,
 	}
 	c4 := Cage{
-		animal:         "Papagei",
+		Animal: Animal{
+			name: "Papagei",
+			size: "small",
+		},
 		escaptedAnimal: 4,
 	}
-	fmt.Println(c1.animal, c1.escaptedAnimal, c2.animal, c2.escaptedAnimal)
-	fmt.Println(c3.animal, c3.escaptedAnimal, c4.animal, c4.escaptedAnimal)
+	fmt.Println(c1, c2, c2, c3, c4)
 }
 
 func main() {
@@ -38,7 +53,7 @@ func main() {
 		Desciption: "Zookeeper must catch all the animals until the morning",
 	}
 
-	fmt.Printf(z.Title, z.Desciption)
+	fmt.Printf(z.Title)
 	putAnimal()
-
+	fmt.Printf(z.Desciption)
 }
